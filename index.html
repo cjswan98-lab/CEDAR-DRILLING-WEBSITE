@@ -86,6 +86,16 @@
   .facts li{padding:6px 0;border-bottom:1px solid var(--line);font-size:1.02rem}
   .facts li:last-child{border-bottom:0}
 
+  /* Logistics */
+  .corridors{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:2.4rem}
+  .corridors article{background:var(--navy);color:#fff;padding:26px 28px 28px}
+  .corridors h3{color:#fff;margin-bottom:8px}
+  .corridors .route{font-family:var(--display);font-weight:600;color:#7FB3FF;font-size:.95rem;padding-bottom:12px;margin-bottom:12px;border-bottom:2px solid var(--green)}
+  .corridors p{font-size:1rem;color:rgba(255,255,255,.85)}
+  .log-facts{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:2.4rem}
+  .log-facts div{background:var(--panel);border-left:4px solid var(--green);padding:22px 26px}
+  .log-facts p{font-size:1rem;color:var(--ink-soft);margin-top:4px}
+
   /* Projects */
   .projects{display:grid;grid-template-columns:1fr 1fr;gap:28px}
   .project{background:var(--panel);border-left:5px solid var(--green);padding:28px 30px}
@@ -131,7 +141,7 @@
     .menu-btn[aria-expanded="true"]{background:var(--navy);color:#fff}
     main,footer{margin-left:0}
     section,.hero-inner{padding:64px 24px}
-        .mv,.services,.caps,.facts,.projects,.contact-sec .in{grid-template-columns:1fr}
+        .mv,.services,.caps,.facts,.projects,.corridors,.log-facts,.contact-sec .in{grid-template-columns:1fr}
     .why{grid-template-columns:1fr 1fr}
     .project.wide .body{columns:1}
     footer{padding:20px 24px}
@@ -148,6 +158,7 @@
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#where">Where we work</a>
+    <a href="#logistics">Logistics</a>
     <a href="#projects">Projects</a>
     <a href="#why">Why Cedar</a>
     <a href="#contact">Contact</a>
@@ -246,6 +257,35 @@
         <h3>Project management</h3>
         <ul><li>Cost control</li><li>Schedule management</li><li>Safety &amp; HSE</li><li>Quality assurance</li><li>Client reporting</li></ul>
       </div>
+    </div>
+  </section>
+
+
+  <section id="logistics">
+    <h2>Cross-border trucking</h2>
+    <p>Alongside construction, Cedar Drilling coordinates road haulage for Makomo Resources, moving coal and metallurgical coke from the Hwange coalfield in Zimbabwe to industrial and power customers across the region. Loads are staged at the mine, cleared at the border and delivered to site on a scheduled cycle, so offtakers receive consistent tonnage without managing the corridor themselves.</p>
+    <div class="corridors">
+      <article>
+        <h3>Hwange to South Africa</h3>
+        <div class="route">Hwange · Bulawayo · Beitbridge · Limpopo / Gauteng</div>
+        <p>Metallurgical coke to smelters and steelworks. Beitbridge clearing and convoy scheduling run to fixed weekly slots.</p>
+      </article>
+      <article>
+        <h3>Hwange to Zambia</h3>
+        <div class="route">Hwange · Victoria Falls · Livingstone · Copperbelt</div>
+        <p>Thermal coal to power stations and process plants. Bridge crossing and Zambian transit documentation handled end to end.</p>
+      </article>
+      <article>
+        <h3>Hwange to D.R. Congo</h3>
+        <div class="route">Hwange · Kasumbalesa · Lubumbashi / Kolwezi</div>
+        <p>Thermal coal for power generation and mining operations in Haut-Katanga and Lualaba, with in-transit tracking to delivery.</p>
+      </article>
+    </div>
+    <div class="log-facts">
+      <div><h3>Fleet coordination</h3><p>Contracted side-tipper and flat-deck fleets sized to the offtake schedule, with loading at the mine siding and turnaround targets per corridor.</p></div>
+      <div><h3>Border and compliance</h3><p>Pre-lodged customs entries, MMCZ export documentation, weighbridge and certificate control at each crossing.</p></div>
+      <div><h3>Delivery assurance</h3><p>Sealed loads, per-truck weighbridge reconciliation at destination and monthly tonnage reporting to the customer.</p></div>
+      <div><h3>Road to rail</h3><p>Corridors are planned so that volumes can migrate to rail as capacity opens, with trucking retained for first- and last-mile legs.</p></div>
     </div>
   </section>
 
