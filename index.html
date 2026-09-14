@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cedar Drilling — Engineering, Procurement &amp; Construction across Central and Southern Africa</title>
+<meta name="description" content="Cedar Drilling Company (Pty) Ltd is an EPC contractor delivering energy, mining, industrial and transport infrastructure in South Africa, Zimbabwe, the DRC, Zambia and Angola.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B2E5C;
+    --navy-deep:#072244;
+    --green:#3B82E8;
+    --green-dark:#1155AA;
+    --panel:#EEF3FA;
+    --line:#D3DDEA;
+    --ink:#1A2433;
+    --ink-soft:#4B5A70;
+    --white:#FFFFFF;
+    --rail:280px;
+    --display:'Barlow Semi Condensed',Arial Narrow,sans-serif;
+    --body:'Barlow',Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.55;font-size:17px}
+  a{color:inherit}
+  h1,h2,h3{font-family:var(--display);line-height:1.1;color:var(--navy)}
+  h2{font-size:2.1rem;font-weight:700;margin-bottom:.35rem}
+  h2::after{content:"";display:block;width:64px;height:3px;background:var(--green);margin:.9rem 0 1.6rem}
+  h3{font-size:1.3rem;font-weight:600}
+  p{max-width:68ch}
+  :focus-visible{outline:3px solid var(--green);outline-offset:3px}
+
+  /* Rail */
+  .rail{position:fixed;top:0;left:0;bottom:0;width:var(--rail);background:var(--navy);color:var(--white);display:flex;flex-direction:column;border-right:4px solid var(--green);z-index:10}
+  .brand{background:#fff;padding:18px 24px 18px 12px;margin:0}
+  .brand img{display:block;width:170px;height:auto}
+  .rail nav{padding:28px 0}
+  .rail nav a{display:block;padding:11px 28px;text-decoration:none;font-family:var(--display);font-size:1.05rem;font-weight:500;color:rgba(255,255,255,.82);border-left:3px solid transparent}
+  .rail nav a:hover,.rail nav a:focus-visible{background:rgba(255,255,255,.06);color:#fff;border-left-color:var(--green)}
+  .rail .contact{margin-top:auto;padding:24px 28px 32px;font-size:.9rem;line-height:1.7;color:rgba(255,255,255,.78);border-top:1px solid rgba(255,255,255,.12)}
+  .rail .contact a{text-decoration:none;color:#fff;display:block}
+  .rail .contact .addr{margin-top:10px;font-size:.82rem}
+
+  /* Page */
+  main{margin-left:var(--rail)}
+  section{padding:88px 72px;max-width:1160px}
+  section+section{border-top:1px solid var(--line)}
+
+  /* Hero */
+  .hero{padding:0;max-width:none;background:var(--navy-deep);color:#fff}
+  .hero-inner{padding:110px 72px 96px;max-width:1160px;position:relative;overflow:hidden}
+  .hero h1{color:#fff;font-size:clamp(2.6rem,5.2vw,4.6rem);font-weight:700;max-width:15ch;letter-spacing:-.01em}
+  .hero .lede{margin-top:1.6rem;font-size:1.2rem;max-width:56ch;color:rgba(255,255,255,.82)}
+  .hero .tag{font-family:var(--display);font-weight:600;font-size:1.05rem;color:#7FB3FF;margin-bottom:1.4rem}
+  .hero .actions{margin-top:2.4rem;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 24px;text-decoration:none;font-family:var(--display);font-weight:600;font-size:1.05rem;border:2px solid var(--green);background:var(--green);color:#fff}
+  .btn:hover,.btn:focus-visible{background:var(--green-dark);border-color:var(--green-dark)}
+  .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+  .btn.ghost:hover,.btn.ghost:focus-visible{border-color:#fff;background:transparent}
+  .hero-grid{position:absolute;right:-60px;top:-40px;width:520px;height:520px;opacity:.12;pointer-events:none}
+
+  /* Overview */
+  .mv{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:2.4rem}
+  .mv div{background:var(--panel);padding:26px 28px;border-left:4px solid var(--green)}
+  .mv h3{margin-bottom:.4rem}
+  .mv p{font-size:1rem;color:var(--ink-soft)}
+
+  /* Services */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .services article{background:var(--navy);color:#fff;padding:26px 28px 30px}
+  .services h3{color:#fff;border-bottom:2px solid var(--green);padding-bottom:12px;margin-bottom:16px}
+  .services ul{list-style:none}
+  .services li{padding:6px 0;font-size:1rem;color:rgba(255,255,255,.85);display:flex;gap:10px}
+  .services li::before{content:"";width:6px;height:6px;background:var(--green);flex:none;margin-top:10px}
+  .caps{display:grid;grid-template-columns:1fr 1fr;gap:28px 48px;margin-top:3rem}
+  .caps p{font-size:1rem;color:var(--ink-soft);margin-top:4px}
+
+  /* Where & how */
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+  .facts h3{padding-bottom:10px;border-bottom:2px solid var(--green);margin-bottom:14px}
+  .facts ul{list-style:none}
+  .facts li{padding:6px 0;border-bottom:1px solid var(--line);font-size:1.02rem}
+  .facts li:last-child{border-bottom:0}
+
+  /* Projects */
+  .projects{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .project{background:var(--panel);border-left:5px solid var(--green);padding:28px 30px}
+  .project header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+  .project h3{font-size:1.45rem;max-width:16ch}
+  .project .type{flex:none;background:var(--navy);color:#fff;font-family:var(--display);font-size:.85rem;font-weight:600;padding:5px 12px;margin-top:4px}
+  .project .place{color:var(--green-dark);font-family:var(--display);font-weight:600;font-size:1rem;margin:.6rem 0 1rem;padding-bottom:.6rem;border-bottom:1px solid var(--line)}
+  .project p{font-size:1rem;color:var(--ink-soft)}
+  .project.wide{grid-column:1/-1}
+  .project.wide .body{columns:2;column-gap:40px}
+
+  /* Why & HSE */
+  .why{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:3.6rem}
+  .why div{background:var(--panel);border-top:4px solid var(--green);padding:20px 18px;font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--navy)}
+  .hse{display:flex;gap:36px;flex-wrap:wrap}
+  .hse span{display:flex;align-items:center;gap:10px;font-size:1.05rem}
+  .hse span::before{content:"✓";color:var(--green);font-weight:700;font-size:1.2rem}
+
+  /* Contact */
+  .contact-sec{background:var(--panel);max-width:none}
+  .contact-sec .in{max-width:1160px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+  .contact-sec .in>div:first-child p{color:var(--ink-soft)}
+  .card{background:var(--navy);color:#fff;padding:32px 34px;font-size:1.05rem;line-height:1.8}
+  .card a{text-decoration:none;display:block;font-family:var(--display);font-size:1.25rem;font-weight:600}
+  .card a:hover{color:#7FB3FF}
+  .card .addr{margin-top:14px;color:rgba(255,255,255,.8)}
+  .card .reg{margin-top:18px;font-size:.85rem;color:rgba(255,255,255,.6);padding-top:14px;border-top:1px solid rgba(255,255,255,.15)}
+
+  footer{margin-left:var(--rail);padding:22px 72px;font-size:.85rem;color:var(--ink-soft);border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  /* Mobile */
+  .menu-btn{display:none}
+  @media (max-width:1000px){
+    :root{--rail:0px}
+    .rail{position:sticky;top:0;bottom:auto;width:100%;flex-direction:row;align-items:center;border-right:0;border-bottom:4px solid var(--green);flex-wrap:wrap;background:#fff}
+    .brand{padding:10px 12px 10px 8px;border:0;width:auto;display:flex;align-items:center}
+    .brand img{width:130px}
+    .rail nav{display:none;width:100%;padding:8px 0 12px;background:var(--navy);border-top:0}
+    .rail nav.open{display:block}
+    .rail nav a{padding:12px 20px}
+    .rail .contact{display:none}
+    .menu-btn{display:block;margin-left:auto;margin-right:16px;background:none;border:2px solid var(--navy);color:var(--navy);font-family:var(--display);font-weight:600;padding:8px 14px;cursor:pointer}
+    .menu-btn[aria-expanded="true"]{background:var(--navy);color:#fff}
+    main,footer{margin-left:0}
+    section,.hero-inner{padding:64px 24px}
+        .mv,.services,.caps,.facts,.projects,.contact-sec .in{grid-template-columns:1fr}
+    .why{grid-template-columns:1fr 1fr}
+    .project.wide .body{columns:1}
+    footer{padding:20px 24px}
+  }
+</style>
+
+</head>
+<body>
+
+<aside class="rail">
+  <div class="brand"><img src="data:image/jpeg;base64,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" alt="Cedar Drilling"></div>
+  <button class="menu-btn" aria-expanded="false" aria-controls="site-nav" onclick="const n=document.getElementById('site-nav');const o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
+  <nav id="site-nav" aria-label="Site">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#where">Where we work</a>
+    <a href="#projects">Projects</a>
+    <a href="#why">Why Cedar</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="contact">
+    <a href="mailto:info@cedardrilling.com">info@cedardrilling.com</a>
+    <div class="addr">73 Beyers Naude Dr, Cnr Preller<br>Johannesburg, Gauteng 2195<br>South Africa</div>
+  </div>
+</aside>
+
+<main>
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <svg class="hero-grid" viewBox="0 0 520 520" aria-hidden="true">
+        <defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#7FB3FF" stroke-width="1"/></pattern></defs>
+        <rect width="520" height="520" fill="url(#g)"/>
+        <circle cx="260" cy="260" r="180" fill="none" stroke="#7FB3FF" stroke-width="2"/>
+        <circle cx="260" cy="260" r="110" fill="none" stroke="#7FB3FF" stroke-width="2"/>
+      </svg>
+      <div class="tag">Engineering · Procurement · Construction</div>
+      <h1>Reliable infrastructure, built in markets that test it.</h1>
+      <p class="lede">Cedar Drilling delivers integrated EPC projects across the energy, mining, industrial and transport sectors of Central and Southern Africa — from engineering and equipment procurement through construction, commissioning and handover.</p>
+      <div class="actions">
+        <a class="btn" href="#projects">See our projects</a>
+        <a class="btn ghost" href="#contact">Talk to us</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Cedar Drilling</h2>
+    <p>Cedar Drilling is an Engineering, Procurement and Construction company delivering integrated project solutions across industrial, infrastructure and energy sectors in Central and Southern Africa. We specialise in complex projects that need coordinated engineering, specialised equipment procurement and construction management — combining technical expertise with rigorous project management to deliver reliable infrastructure in challenging emerging markets.</p>
+    <div class="mv">
+      <div>
+        <h3>Mission</h3>
+        <p>To deliver high-quality engineering and construction solutions supporting critical infrastructure and industrial capacity across Africa.</p>
+      </div>
+      <div>
+        <h3>Vision</h3>
+        <p>To become a trusted EPC partner for infrastructure, energy and industrial projects throughout Central and Southern Africa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Core services</h2>
+    <div class="services">
+      <article>
+        <h3>EPC delivery</h3>
+        <ul>
+          <li>Project engineering &amp; design</li>
+          <li>Equipment procurement</li>
+          <li>Construction execution</li>
+          <li>Commissioning &amp; handover</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Civil construction</h3>
+        <ul>
+          <li>Earthworks &amp; site preparation</li>
+          <li>Foundations &amp; structures</li>
+          <li>Concrete &amp; road works</li>
+          <li>Industrial platforms</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Infrastructure</h3>
+        <ul>
+          <li>Energy infrastructure</li>
+          <li>Mining-related works</li>
+          <li>Logistics &amp; transport</li>
+          <li>Water &amp; utilities</li>
+        </ul>
+      </article>
+    </div>
+    <div class="caps">
+      <div><h3>Industrial construction</h3><p>Fabrication, installation and commissioning of industrial plants.</p></div>
+      <div><h3>Energy infrastructure</h3><p>Power generation, substations, transmission and renewables.</p></div>
+      <div><h3>Mining infrastructure</h3><p>Process plants, haul roads and bulk materials handling.</p></div>
+      <div><h3>Transport works</h3><p>Roads, bridges, logistics hubs and related civil works.</p></div>
+    </div>
+  </section>
+
+  <section id="where">
+    <h2>Where and how we work</h2>
+    <div class="facts">
+      <div>
+        <h3>Geography</h3>
+        <ul><li>South Africa</li><li>Zimbabwe</li><li>D.R. Congo</li><li>Zambia and Angola</li><li>Central Africa</li></ul>
+      </div>
+      <div>
+        <h3>Sectors</h3>
+        <ul><li>Energy &amp; power</li><li>Mining &amp; resources</li><li>Industrial facilities</li><li>Transport &amp; roads</li><li>Water &amp; utilities</li></ul>
+      </div>
+      <div>
+        <h3>Project management</h3>
+        <ul><li>Cost control</li><li>Schedule management</li><li>Safety &amp; HSE</li><li>Quality assurance</li><li>Client reporting</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Selected project references</h2>
+    <p style="margin-bottom:2.2rem">Our projects span utility-scale renewable energy, underground mining infrastructure, hydropower and wind farm civil works across Southern and Central Africa.</p>
+    <div class="projects">
+      <article class="project">
+        <header><h3>Victoria Falls 100 MW Solar Plant</h3><span class="type">Solar | EPC</span></header>
+        <div class="place">Zimbabwe</div>
+        <p>100 MW utility-scale solar PV development near Victoria Falls. Full EPC scope encompassing civil works, structural foundations, electrical balance-of-plant and grid connection infrastructure.</p>
+      </article>
+      <article class="project">
+        <header><h3>Underground Coking Coal Mine – Hwange</h3><span class="type">Mining | Civil</span></header>
+        <div class="place">Zimbabwe</div>
+        <p>Underground mining infrastructure for coking coal extraction at Hwange Colliery. Scope included mine development civil works, underground access structures, surface facilities and logistics infrastructure.</p>
+      </article>
+      <article class="project">
+        <header><h3>Bunia Hydropower Plant – 16 MW</h3><span class="type">Hydro | Energy</span></header>
+        <div class="place">DRC, Ituri Province</div>
+        <p>16 MW run-of-river hydropower plant rehabilitation and construction. Works included civil structures, powerhouse, penstocks, electromechanical installation and grid integration.</p>
+      </article>
+      <article class="project">
+        <header><h3>Oya Wind Farm – 128 MW</h3><span class="type">Wind | Civils</span></header>
+        <div class="place">South Africa</div>
+        <p>Main civils contractor for the 128 MW Oya Wind Farm: internal access roads from the R356 intersection to WTG 17, including bulk earthworks, roadbed preparation, layer works, compaction and gravel surfacing. Design and construction of low-water crossings and drainage structures for all-weather access, with site establishment, environmental management and QA. The roads provide turbine delivery access, long-term maintenance routes and integrated erosion and stormwater control.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="why">
+    <h2>Why Cedar Drilling</h2>
+    <div class="why">
+      <div>Integrated EPC</div>
+      <div>Strong PM systems</div>
+      <div>Technical expertise</div>
+      <div>Flexible delivery</div>
+      <div>Proven in Africa</div>
+    </div>
+    <h3 style="margin-bottom:1rem">Health, safety &amp; environment</h3>
+    <div class="hse">
+      <span>Worker safety</span>
+      <span>Environmental protection</span>
+      <span>Regulatory compliance</span>
+      <span>Continuous improvement</span>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-sec">
+    <div class="in">
+      <div>
+        <h2>Contact us</h2>
+        <p>Have a project in energy, mining, industrial or transport infrastructure? Get in touch to discuss scope, timelines and how we can deliver it.</p>
+      </div>
+      <div class="card">
+        <a href="mailto:info@cedardrilling.com">info@cedardrilling.com</a>
+        <div class="addr">73 Beyers Naude Dr, Cnr Preller<br>Johannesburg, Gauteng 2195<br>South Africa</div>
+        <div class="reg">Cedar Drilling Company (Pty) Ltd · Registration 2019/034153/07</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Cedar Drilling Company (Pty) Ltd</span>
+  <span>www.cedardrilling.com</span>
+</footer>
+
+</body>
+</html>
